@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Upload</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+  <h1>Unsupervised Action Segmentation and Scene <br/> Understanding in Diverse Instructional Videos</h1>
+  <div id="drop-area">
+    <p>Click below to upload your chosen video file.</p>
+    <p>Once file has been selected, click "Upload Video".</p>
+    <p>Only the following formats are allowed, MP4, WEBM, OGG, MPG and MPEG</p>
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" accept="video/*" required>
+      <button type="submit">Upload Video</button>
+    </form>
+  </div>
+
+  {% if video_url %}
+  <video controls autoplay>
+    <source src="{{ video_url }}" type="video/mp4">
+    <source src="{{ video_url }}" type="video/mpeg">
+    <source src="{{ video_url }}" type="video/mpg">
+    Your browser does not support the video tag.
+  </video>
+  {% endif %}
+
+  {% if transcription_status == 'completed' %}
+  <div id="loading-status">
+    <p>Transcription Complete!</p>
+    <div class="action-buttons">
+      <button id="segment-btn" onclick="processVideo('segments')">Generate Segments</button>
+      <button id="summary-btn" onclick="processVideo('summary')">Generate Summary</button>
+    </div>
+  </div>
+
+  <div class="future-space">
+    <!-- Loader -->
+    <div id="loader" style="display: none; text-align: center; font-weight: bold;">
+      Processing... Please wait.
+    </div>
+
+    <!-- JSON Output -->
+    <pre id="json-output"></pre>
+
+    {% if json_data %}
+    <pre>{{ json_data }}</pre>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

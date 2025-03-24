@@ -1,0 +1,82 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 40px;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Drag & Drop Upload Area */
+#drop-area {
+    border: 2px dashed #007bff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#drop-area.dragover {
+    background-color: #e0f0ff;
+}
+
+/* Upload Button */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Video Display */
+video {
+    width: 60%;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Action Buttons */
+.action-buttons {
+    margin-top: 20px;
+}
+
+.action-buttons button {
+    margin: 10px;
+    display: inline-block;
+}
+
+/* JSON Output */
+.future-space {
+    margin-top: 30px;
+    text-align: left;
+    width: 60%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+}
