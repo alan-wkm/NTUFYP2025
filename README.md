@@ -19,7 +19,7 @@ With the rapid increase in online instructional videos, navigating long-form con
 ## 🎥 Demo Video
 Check out the demo showcasing the project in action:
 
-![Demo Video](assets/Demo.mp4)
+![Demo Video](static/assets/Demo.mp4)
 
 ## 🛠️ Installation
 ### 1️⃣ Clone the Repository
